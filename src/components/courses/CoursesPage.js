@@ -15,7 +15,7 @@ if(courses.length === 0 ) {
 }
     
 if(authors.length === 0) {
-    actions.loadAuthors().catch(error => {
+actions.loadAuthors().catch(error => {
         alert('Load Authors failed', +error)
     })
 }
@@ -54,7 +54,7 @@ if(authors.length === 0) {
 CoursesPage.propTypes = {
     actions : PropTypes.object.isRequired,
     courses: PropTypes.array.isRequired,
-    authors: PropTypes.array.isRequired,
+    authors: PropTypes.array.isRequired
 }
 function mapStateToProps (state) {
     return {

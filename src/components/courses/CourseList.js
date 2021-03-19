@@ -21,7 +21,7 @@ const CourseList = ({courses}) => {
                                 <a className="btn btn-light" href={"http://pluralsight.com/courses/" + course.slug}>Watch</a>
                             </td>
                             <td style={padding}>
-                                <Link to={"/course" + course.slug}>{course.title}</Link>
+                                <Link to={"/course/" + course.slug}>{course.title}</Link>
                             </td>
                             <td style={padding}>{course.authorsName}</td>
                             <td style={padding}>{course.category}</td>
