@@ -40,7 +40,7 @@ const CourseForm = ({
         onChange={onChange}
         error={errors.category}
       />
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" disabled={saving} className="btn btn-primary">
         {saving ? "Saving..." : "Save"}
       </button>
     </form>
@@ -52,7 +52,7 @@ CourseForm.propTypes = {
   course: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
-  errors: PropTypes.object.isRequired,
+  errors: PropTypes.object,
   saving: PropTypes.bool,
 };
 

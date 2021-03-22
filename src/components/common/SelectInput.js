@@ -6,13 +6,13 @@ const SelectInput = ({
   label,
   value,
   onChange,
-  defaultOption,
+  defaultOptions,
   options,
   error,
 }) => {
   return (
     <div className="form-group">
-      <label htmlFor="name">{label}</label>
+      <label htmlFor={name}>{label}</label>
       <div className="field">
         <select
           name={name}
@@ -20,7 +20,7 @@ const SelectInput = ({
           onChange={onChange}
           className="form-control"
         >
-          <option value="">{defaultOption}</option>
+          <option value="">{defaultOptions}</option>
           {options.map((option) => {
             return (
               <option key={option.value} value={option.value}>
@@ -38,9 +38,9 @@ const SelectInput = ({
 SelectInput.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   error: PropTypes.string,
-  defaultOption: PropTypes.string,
+  defaultOptions: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.object),
   onChange: PropTypes.func.isRequired,
 };
